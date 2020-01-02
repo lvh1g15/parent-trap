@@ -1,0 +1,7 @@
+{
+  "name": "Shape Shifter",
+  "id": "790953168293134059",
+  "api": "1.0.0",
+  "main": "code.js",
+  "ui": "ui.html"
+}
