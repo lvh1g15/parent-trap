@@ -2,7 +2,7 @@
 let CreateShapeInstance = (selectedNode: SceneNode) => {
   let nodeType: String = selectedNode.type;
   let shapeInstance: any;
-
+  console.log(nodeType);
   if(nodeType === "ELLIPSE"){
     shapeInstance = figma.createEllipse() as EllipseNode;
   };
@@ -15,7 +15,14 @@ let CreateShapeInstance = (selectedNode: SceneNode) => {
   shapeInstance.x = selectedNode.x + (50.0 + selectedNode.width);
   shapeInstance.y = selectedNode.y;
   shapeInstance.resize(selectedNode.width, selectedNode.height);
-  shapeInstance.fills = selectedNode["fills"];
+  shapeInstance.fills = [{
+      blendMode: "NORMAL", 
+      color: { r: 1, g: 1, b:1 },
+      opacity: 1, 
+      type: "SOLID", 
+      visible: true
+    }];
+  console.log(selectedNode["fills"]);
 
   return shapeInstance;
 }
